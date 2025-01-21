@@ -13,7 +13,7 @@ This project is a backend application that provides APIs for managing users, que
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/charityrymbai/assignment-2-firstBench-ai
    cd assignment-2-firstbench.ai
    ```
 
