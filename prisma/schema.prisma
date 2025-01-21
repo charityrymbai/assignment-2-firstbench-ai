@@ -13,4 +13,27 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  email     String   @unique
+  name      String?
+  password  String
+  createdAt DateTime @default(now())
+  mockTests MockTest[]
+}
+
+model MockTest {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String   @map("userId") @db.ObjectId
+  questionId String[]
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model Questions{
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  question   String
+  options    String[]
+  answerIndex     Int
+}
+
 
